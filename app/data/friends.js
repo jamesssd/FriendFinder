@@ -193,4 +193,6 @@ let friendsArr = [
     "1"
     ]
     }
-]
+];
+
+module.exports = friendsArr;
