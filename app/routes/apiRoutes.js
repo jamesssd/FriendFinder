@@ -3,7 +3,8 @@
 //TODO: Create GET routes for /api/friends (display a JSON of all possible friends)
 //TODO: Create POST routes for /api/friends (use to handle incoming survey results.)
 
-let friendsData = require('/api/friends');
+let friendsData = require('/Users/dizon/Documents/Bootcamp/FriendFinder/app/data/friends');
+
 var path = require("path");
 
 module.exports = function(app){

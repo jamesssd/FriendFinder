@@ -1,7 +1,7 @@
 # FriendFinder
 
 ###Live Link
-[FriendFinder Live Applicaion!](https://git.heroku.com/i-need-a-friend.git)
+[FriendFinder Live Applicaion!](https://i-need-a-friend.herokuapp.com/)
 
 ###Getting Started
 
