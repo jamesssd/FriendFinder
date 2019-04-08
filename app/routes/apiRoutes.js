@@ -3,34 +3,46 @@
 //TODO: Create GET routes for /api/friends (display a JSON of all possible friends)
 //TODO: Create POST routes for /api/friends (use to handle incoming survey results.)
 
-let friendsData = require('../data/friends');
+let friendsData = require('/api/friends');
+var path = require("path");
 
 module.exports = function(app){
-    app.get('/api/friends', function(req,res){
+    app.get('/api/friends', function(req, res){
         res.json(friends);
     });
 
 
     app.post('/api/friends', function(req, res){
-        let totalDifference = 0;
-        let bestMatch = {
-            name: '',
-            photo: '',
-            friendDifference: 1000
-        }
-        res.json(friends);
+        let use = req.body;
+        let newFriendScore = req.body.scores;
+        let scoresArr = [];
+        let friendCount = 0;
+        let bestMatch = 0;
 
         for (let i = 0; i < friendsArr.length; i++) {
-           console.log(friendsArr[i].name);
-           totalDifference = 0;            
+            let scoresDiff = 0;
+            for(var j=0; j<newFriendScores.length; j++){
+            scoresDiff += (Math.abs(parseInt(friendList[i].scores[j]) - parseInt(newFriendScores[j])));
+            }
+
+            //push results into scoresArray
+            scoresArray.push(scoresDiff);
         }
-    });
 
+        //after all friends are compared, find best match
+        for(var i=0; i<scoresArray.length; i++){
+            if(scoresArray[i] <= scoresArray[bestMatch]){
+            bestMatch = i;
+            }
+        }
 
-    //add a clear button?
-    // app.post('/api/clear', function(req, res){
-    //     survey.length = 0;
+        //return bestMatch data
+        let newHomie = friendList[bestMatch];
+        res.json(newHomie);
 
-    //     res.join({ ok: true });
-    // });
-};
+        //pushes new submission into the friendsList array
+        friendList.push(req.body);
+        });
+    };
+            
+        

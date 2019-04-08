@@ -23,3 +23,6 @@ For a user to gain access for this application, the user must install the follow
 ###Acknowledgemens
 -Thank you Google for reminding me what some Express.js syntax looks like.
 -Thank you github for showing me a cheatsheet for my readups.
+
+###Feedback
+This assignment was not bad. I had a difficulty with the HTML and CSS part of the homework just because its been a few weeks since I practice HTML and CSS.
