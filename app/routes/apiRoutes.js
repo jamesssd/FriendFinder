@@ -3,13 +3,13 @@
 //TODO: Create GET routes for /api/friends (display a JSON of all possible friends)
 //TODO: Create POST routes for /api/friends (use to handle incoming survey results.)
 
-let friendsData = require('../data/friends.js');
+let friendsArr = require('../data/friends.js');
 // let router = express.Router();
 // var path = require("path");
 
 module.exports = function(app, path){
     app.get('./api/friends', function(req, res){
-        res.json(friends);
+        res.json(friendsArr);
     });
 
 
