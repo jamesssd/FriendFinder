@@ -3,17 +3,17 @@
 //TODO: Create GET routes for /api/friends (display a JSON of all possible friends)
 //TODO: Create POST routes for /api/friends (use to handle incoming survey results.)
 
-let friendsData = require('/Users/dizon/Documents/Bootcamp/FriendFinder/app/data/friends');
+let friendsData = require('../data/friends.js');
 // let router = express.Router();
 // var path = require("path");
 
 module.exports = function(app, path){
-    app.get('/api/friends', function(req, res){
+    app.get('./api/friends', function(req, res){
         res.json(friends);
     });
 
 
-    app.post('/api/friends', function(req, res){
+    app.post('./api/friends', function(req, res){
         let use = req.body;
         let newFriendScore = req.body.scores;
         let scoresArr = [];
@@ -23,7 +23,7 @@ module.exports = function(app, path){
         for (let i = 0; i < friendsArr.length; i++) {
             let scoresDiff = 0;
             for(var j=0; j<newFriendScores.length; j++){
-            scoresDiff += (Math.abs(parseInt(friendList[i].scores[j]) - parseInt(newFriendScores[j])));
+            scoresDiff += (Math.abs(parseInt(friendsArr[i].scores[j]) - parseInt(newFriendScores[j])));
             }
 
             //push results into scoresArray
@@ -38,11 +38,11 @@ module.exports = function(app, path){
         }
 
         //return bestMatch data
-        let newHomie = friendList[bestMatch];
+        let newHomie = friendsArr[bestMatch];
         res.json(newHomie);
 
         //pushes new submission into the friendsList array
-        friendList.push(req.body);
+        friendsArr.push(req.body);
         });
     };
             
