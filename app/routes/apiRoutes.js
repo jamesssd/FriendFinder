@@ -8,12 +8,12 @@ let friendsArr = require('../data/friends.js');
 // var path = require("path");
 
 module.exports = function(app, path){
-    app.get('./api/friends', function(req, res){
+    app.get('/api/friends', function(req, res){
         res.json(friendsArr);
     });
 
 
-    app.post('./api/friends', function(req, res){
+    app.post('/api/friends', function(req, res){
         let use = req.body;
         let newFriendScore = req.body.scores;
         let scoresArr = [];
