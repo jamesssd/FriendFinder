@@ -8,7 +8,8 @@ var PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(__dirname + "/app/public"))
+app.use(htmlRoutes);
+app.use(apiRoutes);
 
 require("./app/routes/apiRoutes")(app)
 require("./app/routes/htmlRoutes")(app)
